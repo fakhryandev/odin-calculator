@@ -10,6 +10,7 @@ const currentOperationScreen = document.getElementById(
   "currentOperationScreen"
 );
 const equalsButton = document.getElementById("equalsButton");
+const pointButton = document.getElementById("pointButton");
 
 const evaluate = () => {
   if (currentOperation === null || shouldResetScreen) return;
@@ -27,7 +28,16 @@ const evaluate = () => {
   currentOperation = null;
 };
 
+const appendPoint = () => {
+  if (shouldResetScreen) resetScreen();
+  if (currentOperationScreen.textContent === "")
+    currentOperationScreen.textContent = "0";
+  if (currentOperationScreen.textContent.includes(".")) return;
+  currentOperationScreen.textContent += ".";
+};
+
 equalsButton.addEventListener("click", evaluate);
+pointButton.addEventListener("click", appendPoint);
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => appendNumber(button.textContent));
@@ -51,6 +61,7 @@ const resetScreen = () => {
 };
 
 const setOperation = (operator) => {
+  if (currentOperation !== null) evaluate();
   firstOperand = currentOperationScreen.textContent;
   currentOperation = operator;
   lastOperationScreen.textContent = `${firstOperand} ${currentOperation}`;
