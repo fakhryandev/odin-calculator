@@ -11,6 +11,8 @@ const currentOperationScreen = document.getElementById(
 );
 const equalsButton = document.getElementById("equalsButton");
 const pointButton = document.getElementById("pointButton");
+const clearButton = document.getElementById("clearButton");
+const deleteButton = document.getElementById("deleteButton");
 
 const evaluate = () => {
   if (currentOperation === null || shouldResetScreen) return;
@@ -36,8 +38,24 @@ const appendPoint = () => {
   currentOperationScreen.textContent += ".";
 };
 
+const clear = () => {
+  currentOperationScreen.textContent = "0";
+  lastOperationScreen.textContent = "";
+  firstOperand = "";
+  secondOperand = "";
+  currentOperation = null;
+};
+
+const deleteNumber = () => {
+  currentOperationScreen.textContent = currentOperationScreen.textContent
+    .toString()
+    .slice(0, -1);
+};
+
 equalsButton.addEventListener("click", evaluate);
 pointButton.addEventListener("click", appendPoint);
+clearButton.addEventListener("click", clear);
+deleteButton.addEventListener("click", deleteNumber);
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => appendNumber(button.textContent));

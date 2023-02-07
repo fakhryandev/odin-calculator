@@ -16,6 +16,7 @@ body {
   border: 2px solid #000;
   padding: 1.2em;
   display: flex;
+  gap: 8px;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -38,6 +39,16 @@ body {
 
 .screen-current {
   font-size: 50px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  padding: 0.8em 2.3em;
+  text-transform: uppercase;
 }
 
 .keys-wrapper {
