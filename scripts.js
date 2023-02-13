@@ -52,6 +52,17 @@ const deleteNumber = () => {
     .slice(0, -1);
 };
 
+const handleKeyboadInput = (e) => {
+  if (e.key >= 0 && e.key <= 9) appendNumber(e.key);
+  if (e.key === ".") appendPoint();
+  if (e.key === "=" || e.key === "Enter") evaluate();
+  if (e.key === "Backspace") deleteNumber();
+  if (e.key === "Escape") clear();
+  if (e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/")
+    setOperation(convertOperator(e.key));
+};
+
+window.addEventListener("keydown", handleKeyboadInput);
 equalsButton.addEventListener("click", evaluate);
 pointButton.addEventListener("click", appendPoint);
 clearButton.addEventListener("click", clear);
@@ -84,6 +95,13 @@ const setOperation = (operator) => {
   currentOperation = operator;
   lastOperationScreen.textContent = `${firstOperand} ${currentOperation}`;
   shouldResetScreen = true;
+};
+
+const convertOperator = (keyboardOperator) => {
+  if (keyboardOperator === "/") return "÷";
+  if (keyboardOperator === "*") return "×";
+  if (keyboardOperator === "-") return "−";
+  if (keyboardOperator === "+") return "+";
 };
 
 const add = (a, b) => {
