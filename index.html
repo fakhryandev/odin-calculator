@@ -9,34 +9,45 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="calculator">
-      <div class="display">
-        <div class="screen-last" id="lastOperationScreen"></div>
-        <div class="screen-current" id="currentOperationScreen">0</div>
+    <main>
+      <div class="calculator">
+        <div class="display">
+          <div class="screen-last" id="lastOperationScreen"></div>
+          <div class="screen-current" id="currentOperationScreen">0</div>
+        </div>
+        <div class="button-wrapper">
+          <button class="key button" id="clearButton">Clear</button>
+          <button class="key button" id="deleteButton">Delete</button>
+        </div>
+        <div class="keys-wrapper">
+          <button class="key" data-number>7</button>
+          <button class="key" data-number>8</button>
+          <button class="key" data-number>9</button>
+          <button class="key operator" data-operator>÷</button>
+          <button class="key" data-number>4</button>
+          <button class="key" data-number>5</button>
+          <button class="key" data-number>6</button>
+          <button class="key operator" data-operator>×</button>
+          <button class="key" data-number>1</button>
+          <button class="key" data-number>2</button>
+          <button class="key" data-number>3</button>
+          <button class="key operator" data-operator>-</button>
+          <button class="key" id="pointButton">.</button>
+          <button class="key" data-number>0</button>
+          <button class="key operator" id="equalsButton">=</button>
+          <button class="key operator" data-operator>+</button>
+        </div>
       </div>
-      <div class="button-wrapper">
-        <button class="key button" id="clearButton">Clear</button>
-        <button class="key button" id="deleteButton">Delete</button>
-      </div>
-      <div class="keys-wrapper">
-        <button class="key" data-number>7</button>
-        <button class="key" data-number>8</button>
-        <button class="key" data-number>9</button>
-        <button class="key operator" data-operator>÷</button>
-        <button class="key" data-number>4</button>
-        <button class="key" data-number>5</button>
-        <button class="key" data-number>6</button>
-        <button class="key operator" data-operator>×</button>
-        <button class="key" data-number>1</button>
-        <button class="key" data-number>2</button>
-        <button class="key" data-number>3</button>
-        <button class="key operator" data-operator>-</button>
-        <button class="key" id="pointButton">.</button>
-        <button class="key" data-number>0</button>
-        <button class="key operator" id="equalsButton">=</button>
-        <button class="key operator" data-operator>+</button>
-      </div>
-    </div>
+    </main>
+    <footer>
+      <p>
+        Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        <a href="https://github.com/fakhryandev">fakhryandev</a>
+      </p>
+    </footer>
     <script src="scripts.js"></script>
   </body>
 </html>

@@ -2,10 +2,12 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   font-family: Roboto, sans-serif;
+  position: relative;
 }
 
 .calculator {
@@ -74,4 +76,19 @@ body {
 
 .operator {
   background-color: #e48838;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.2em;
+  text-align: center;
+  padding: 1em;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
 }
