@@ -21,11 +21,12 @@ const evaluate = () => {
     return;
   }
   secondOperand = currentOperationScreen.textContent;
-  currentOperationScreen.textContent = operate(
+  const result = operate(
     currentOperation,
     firstOperand,
     secondOperand
-  );
+  ).toString();
+  currentOperationScreen.textContent = result.slice(0, result.indexOf(".") + 3);
   lastOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand} =`;
   currentOperation = null;
 };
